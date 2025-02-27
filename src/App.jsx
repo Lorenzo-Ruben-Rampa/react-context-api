@@ -1,5 +1,17 @@
 // Gestione listato
 import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+// Pages
+import HomePage from "./pages/Homepage";
+import ChiSiamo from "./pages/ChiSiamo";
+import ListaPost from "./pages/ListaPost";
+import PostPage from "./pages/PostPage";
+import Contatti from "./pages/Contatti";
+import NotFound from "./pages/NotFound";
+
+// Layout
+import DefaultLayout from "./layout/DefaultLayout";
 
 function App() {
   //Inserisco array listato iniziale
@@ -47,8 +59,6 @@ function App() {
           <Route path="/posts" element={<Navigate to="/Post" />} />
           <Route path="/Post">
             <Route index element={< PostPage />} />
-            <Route path="CreatePost" element={< PostCreatePage />} />
-            <Route path=":id" element={< PostDetailPage />} />
           </Route>
           {/* Rotta dell'error 404 */}
           <Route path="*" element={<NotFound />} />
