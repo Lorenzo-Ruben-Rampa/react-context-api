@@ -1,12 +1,12 @@
 // importiamo il componente dei post
-import ListaPost from "./ListaPost";
+import PostsList from "../components/PostsList";
 
 
 export default function PostsPage() {
     return (
         <>
             <h2>Ciao sono la pagina dei post</h2>
-            <ListaPost />
+            <PostsList />
         </>
     );
 }

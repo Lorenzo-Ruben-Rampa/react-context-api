@@ -9,7 +9,8 @@ const PostsList = () => {
 
     return (
         <>
-            {
+            < PostsCard />
+            {/* {
                 menu.map((Post) => (
                     <div className='PostItem' key={Post.id}>
                         <h2>{Post.title}</h2>
@@ -17,7 +18,7 @@ const PostsList = () => {
                         <p className="centered">{Post.tags.join(", ")}</p>
                         <Link to={`/post/${Post.id}`} className="centered">Vai al dettaglio</Link>
                     </div>
-                ))
+                )) */}
 
         </>
     )

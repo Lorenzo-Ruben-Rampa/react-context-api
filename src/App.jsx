@@ -1,5 +1,4 @@
 // Gestione listato
-import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // importo GlobalContext
@@ -8,7 +7,6 @@ import GlobalContext from './contexts/GlobalContext';
 // Pages
 import HomePage from "./pages/Homepage";
 import ChiSiamo from "./pages/ChiSiamo";
-import ListaPost from "./pages/ListaPost";
 import PostPage from "./pages/PostPage";
 import Contatti from "./pages/Contatti";
 import NotFound from "./pages/NotFound";
@@ -58,7 +56,6 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route index element={< HomePage />} />
             <Route path="/ChiSiamo" element={< ChiSiamo />} />
-            <Route path="/ListaPost" element={< ListaPost postsProp={menu} />} />
             <Route path="/Contatti" element={< Contatti />} />
             <Route path="/posts" element={<Navigate to="/Post" />} />
             <Route path="/Post">
