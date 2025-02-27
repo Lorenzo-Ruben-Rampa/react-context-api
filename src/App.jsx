@@ -2,6 +2,9 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+// importo GlobalContext
+import GlobalContext from './contexts/GlobalContext';
+
 // Pages
 import HomePage from "./pages/Homepage";
 import ChiSiamo from "./pages/ChiSiamo";
@@ -49,22 +52,24 @@ function App() {
   ];
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<DefaultLayout />}>
-          <Route index element={< HomePage />} />
-          <Route path="/ChiSiamo" element={< ChiSiamo />} />
-          <Route path="/ListaPost" element={< ListaPost postsProp={menu} />} />
-          <Route path="/Contatti" element={< Contatti />} />
-          <Route path="/posts" element={<Navigate to="/Post" />} />
-          <Route path="/Post">
-            <Route index element={< PostPage />} />
+    <GlobalContext.Provider value={{ menu }}>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout />}>
+            <Route index element={< HomePage />} />
+            <Route path="/ChiSiamo" element={< ChiSiamo />} />
+            <Route path="/ListaPost" element={< ListaPost postsProp={menu} />} />
+            <Route path="/Contatti" element={< Contatti />} />
+            <Route path="/posts" element={<Navigate to="/Post" />} />
+            <Route path="/Post">
+              <Route index element={< PostPage />} />
+            </Route>
+            {/* Rotta dell'error 404 */}
+            <Route path="*" element={<NotFound />} />
           </Route>
-          {/* Rotta dell'error 404 */}
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </GlobalContext.Provider>
   );
 }
 
