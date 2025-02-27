@@ -98,8 +98,20 @@ button:focus-visible {
   max-height: 150px;
 }
 
-img {
+.image-mini-container {
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 33%;
+}
+
+.postItem {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .background {
@@ -109,14 +121,13 @@ img {
 }
 
 .mini {
-  width: 25%;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
 .centered {
   position: relative;
-  left: 37%;
+  left: 33%;
 }
 
 .checkbox-pb {

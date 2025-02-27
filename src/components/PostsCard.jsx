@@ -16,7 +16,9 @@ const PostsCard = (props) => {
         <>
             <div className='postItem'>
                 <h2>{post.title}</h2>
-                <img src={post.image} alt={post.name} />
+                <div className='image-mini-container'>
+                    <img src={post.image} alt={post.name} />
+                </div>
                 <p>{post.tags.join(", ")}</p>
                 <Link to={`/posts/${post.id}`}>Vai al dettaglio</Link>
             </div>
